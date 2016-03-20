@@ -2,9 +2,14 @@ import java.awt.Color;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.event.MouseInputAdapter;
+
+import org.hyperic.sigar.Mem;
+import org.hyperic.sigar.Sigar;
+import org.hyperic.sigar.SigarException;
 
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
@@ -18,6 +23,7 @@ public class MainWindow extends JFrame{
 
 	private static int x, y;
 	static TestWindow wind;
+	private Sigar sigar = new Sigar();
 	
 	public MainWindow(){
 		
@@ -89,7 +95,66 @@ public class MainWindow extends JFrame{
 		Beguin.setBounds(23, 475, 304, 51);
 		getContentPane().add(Beguin);
 		
+		JLabel lblCores = new JLabel("Cores: "+Runtime.getRuntime().availableProcessors());
+		lblCores.setBackground(Color.WHITE);
+		lblCores.setForeground(Color.WHITE);
+		lblCores.setBounds(34, 339, 279, 21);
+		getContentPane().add(lblCores);
+		
+		JLabel lblOs = new JLabel("OS: "+System.getProperty("os.name")+" "+System.getProperty("os.version")+" "+System.getProperty("os.arch"));
+		lblOs.setForeground(Color.WHITE);
+		lblOs.setBackground(Color.WHITE);
+		lblOs.setBounds(34, 428, 279, 16);
+		getContentPane().add(lblOs);
+		
+		
+		Mem mem = null;
+		try {
+			mem = sigar.getMem();
+		} catch (SigarException e2) { e2.printStackTrace(); }
+		
+		JLabel lblNewLabel = new JLabel("RAM: "+mem.getTotal()/ 1024 / 1024+ " MB");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBounds(34, 372, 279, 16);
+		getContentPane().add(lblNewLabel);
+		
+		float diskSize = new File("/").getTotalSpace();
+		diskSize = diskSize/1000000000;
+		diskSize = (float) Math.round(diskSize * 100) / 100;
+		
+		JLabel lblHdd = new JLabel("HDD: "+diskSize+" GB");
+		lblHdd.setForeground(Color.WHITE);
+		lblHdd.setBounds(34, 400, 279, 16);
+		getContentPane().add(lblHdd);
+		
+		org.hyperic.sigar.CpuInfo[] infos;
+		org.hyperic.sigar.CpuInfo info = null;
+		try {
+			infos = this.sigar.getCpuInfoList();
+			info = infos[0];
+		} catch (SigarException e1) { e1.printStackTrace(); }
+		
+		JLabel lblCpu = new JLabel("CPU: "+info.getVendor()+" "+info.getModel());
+		lblCpu.setForeground(Color.WHITE);
+		lblCpu.setBounds(34, 278, 279, 16);
+		getContentPane().add(lblCpu);
+		
+		JLabel label = new JLabel("Frequency: "+(float)info.getMhz()/1000+" Ghz");
+		label.setForeground(Color.WHITE);
+		label.setBackground(Color.WHITE);
+		label.setBounds(34, 306, 279, 21);
+		getContentPane().add(label);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		if(info.getVendor().equals("Intel")){
+			label_1.setIcon(new ImageIcon(MainWindow.class.getResource("/img/intel.png")));
+		}else{
+			label_1.setIcon(new ImageIcon(MainWindow.class.getResource("/img/amd.png")));
+		}
+		label_1.setBounds(34, 62, 279, 193);
+		getContentPane().add(label_1);
+		
 	}
-
-	
 }

@@ -56,7 +56,7 @@ public class TestWindow extends JFrame{
 		});
 		getContentPane().add(Close);
 		
-		Progress = new JLabel("0 / 2");
+		Progress = new JLabel("0 / 5");
 		Progress.setHorizontalAlignment(SwingConstants.RIGHT);
 		Progress.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
 		Progress.setForeground(Color.WHITE);
