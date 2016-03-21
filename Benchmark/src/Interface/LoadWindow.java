@@ -1,7 +1,10 @@
+package Interface;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.event.MouseInputAdapter;
@@ -12,12 +15,31 @@ import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 
 @SuppressWarnings("serial")
-public class TestWindow extends JFrame{
+public class LoadWindow extends JFrame{
 
 	private static int x, y;
-	public static JLabel Progress, LoadingBar;
+	static JLabel LoadingBar = new JLabel(""), Progress;
+	static LoadWindow wind;
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					wind = new LoadWindow();
+					wind.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	    
+		Compiler comp = new Compiler();
+		comp.start();
+		 
+	}	
 	
-	public TestWindow(){
+	public LoadWindow(){
 		
 		setBackground(new Color(40, 40, 40));
 		setLocationRelativeTo(null);
@@ -32,7 +54,7 @@ public class TestWindow extends JFrame{
 
 		JLabel Logo = new JLabel("");
 		Logo.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/knyx-logo-big.png")));
-		Logo.setBounds(0, 35, 350, 128);
+		Logo.setBounds(0, 75, 350, 128);
 		getContentPane().add(Logo);
 		
 		final JLabel Close = new JLabel("x");
@@ -56,22 +78,16 @@ public class TestWindow extends JFrame{
 		});
 		getContentPane().add(Close);
 		
-		Progress = new JLabel("0 / 5");
+		Progress = new JLabel("Compiling 0 / 5");
 		Progress.setHorizontalAlignment(SwingConstants.RIGHT);
-		Progress.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
 		Progress.setForeground(Color.WHITE);
+		Progress.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
 		Progress.setBounds(0, 495, 324, 45);
 		getContentPane().add(Progress);
 		
-		LoadingBar = new JLabel("");
-		LoadingBar.setIcon(new ImageIcon(TestWindow.class.getResource("/img/cload1.png")));
+		LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload1.png")));
 		LoadingBar.setBounds(0, 484, 350, 66);
 		getContentPane().add(LoadingBar);
-		
-		JLabel Loader = new JLabel("");
-		Loader.setIcon(new ImageIcon(TestWindow.class.getResource("/img/loader.gif")));
-		Loader.setBounds(107, 239, 128, 128);
-		getContentPane().add(Loader);
 		
 		MouseInputAdapter mia = new MouseInputAdapter() {			
 		    @Override
@@ -87,6 +103,6 @@ public class TestWindow extends JFrame{
         }; 
         addMouseListener(mia);
         addMouseMotionListener(mia);
-
+		
 	}
 }
