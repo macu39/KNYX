@@ -7,10 +7,10 @@ import javax.swing.JFrame;
 public class Compiler extends Thread {
 
     public void run(){
-       
-    	System.out.println(System.getProperty("os.name"));
+           	
+    	String[] OS = System.getProperty("os.name").split(" ");
     	
-    	if(System.getProperty("os.name").equals("Windows")){
+    	if(!OS[0].equals("Windows")){
     	
 		    try {
 		    	
@@ -48,10 +48,36 @@ public class Compiler extends Thread {
 			} catch (IOException | InterruptedException e) { e.printStackTrace(); }
 		    
     	}else{
-    	
-    		LoadWindow.wind.setVisible(false);
-			JFrame frame = new MainWindow();
-			frame.setVisible(true); 
+    		
+    		try {
+    		
+				Thread.sleep(300);
+				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload2.png")));
+				LoadWindow.Progress.setText("Compiling 1 / 5");
+				 
+				Thread.sleep(300);
+				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload3.png")));
+				LoadWindow.Progress.setText("Compiling 2 / 5");
+				
+				Thread.sleep(300);
+				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload4.png")));
+				LoadWindow.Progress.setText("Compiling 3 / 5");
+				 
+				Thread.sleep(300);
+				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload5.png")));
+				LoadWindow.Progress.setText("Compiling 4 / 5");
+				 
+				Thread.sleep(300);
+				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload6.png")));
+				LoadWindow.Progress.setText("Compiling 5 / 5");
+				
+				Thread.sleep(300); 
+	    	
+	    		LoadWindow.wind.setVisible(false);
+				JFrame frame = new MainWindow();
+				frame.setVisible(true); 
+				
+    		} catch (InterruptedException e) { e.printStackTrace(); }
     		
     	}
     	

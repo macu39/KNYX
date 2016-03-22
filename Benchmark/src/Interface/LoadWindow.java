@@ -18,8 +18,9 @@ import java.awt.event.MouseAdapter;
 public class LoadWindow extends JFrame{
 
 	private static int x, y;
-	static JLabel LoadingBar = new JLabel(""), Progress;
-	static LoadWindow wind;
+	public static JLabel LoadingBar = new JLabel("");
+	public static JLabel Progress = new JLabel("Compiling 0 / 5");
+	public static LoadWindow wind;
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
@@ -78,7 +79,6 @@ public class LoadWindow extends JFrame{
 		});
 		getContentPane().add(Close);
 		
-		Progress = new JLabel("Compiling 0 / 5");
 		Progress.setHorizontalAlignment(SwingConstants.RIGHT);
 		Progress.setForeground(Color.WHITE);
 		Progress.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
