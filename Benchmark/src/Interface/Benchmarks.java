@@ -19,7 +19,7 @@ public class Benchmarks extends Thread {
     	
 		    try {		    	
 		    	
-				theProcess = Runtime.getRuntime().exec("./primes");
+				theProcess = Runtime.getRuntime().exec("primes");
 				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
 			    System.out.println("CPU test (primes): "+inStream.readLine());
 			    TestWindow.Progress.setText("1 / 5");
@@ -55,19 +55,22 @@ public class Benchmarks extends Thread {
 		
 	    }else{
 	    	
+	    	Process theProcess = null;
+        	BufferedReader inStream = null;
+	    	
 	    	try {	
 	    	
-				//theProcess = Runtime.getRuntime().exec("./primes");
-				//inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
-			    //System.out.println("CPU test (primes): "+inStream.readLine());
+				theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\Benchmarks\\primes.exe");
+				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
+			    System.out.println("CPU test (primes): "+inStream.readLine());
 			    TestWindow.Progress.setText("1 / 5");
 			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload2.png")));
 	
-				//theProcess = null;
-			    //inStream = null;
-			   // theProcess = Runtime.getRuntime().exec("./pi");
-			   // inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
-			  //  System.out.println("CPU test (pi): "+inStream.readLine());
+				theProcess = null;
+			    inStream = null;
+			    theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\Benchmarks\\pi.exe");
+			   	inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
+			  	System.out.println("CPU test (pi): "+inStream.readLine());
 			    TestWindow.Progress.setText("2 / 5");
 			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload3.png")));
 			    
@@ -89,7 +92,7 @@ public class Benchmarks extends Thread {
 				JFrame frame = new ResultsWindow();
 				frame.setVisible(true);
 			
-	    	} catch (InterruptedException e) { e.printStackTrace(); }
+	    	} catch (InterruptedException | IOException e) { e.printStackTrace(); }
 	    	
 	    }
     	

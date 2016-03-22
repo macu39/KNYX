@@ -24,7 +24,7 @@ int main () {
    long i;
 
    for(i=0; i<5; i++){
-      it = test(400000000);
+      it = test(1750000000);
       result = it + result;
    }
 

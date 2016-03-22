@@ -51,7 +51,7 @@ public class Compiler extends Thread {
     		
     		try {
     		
-				Thread.sleep(300);
+    			Thread.sleep(300);
 				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload2.png")));
 				LoadWindow.Progress.setText("Compiling 1 / 5");
 				 

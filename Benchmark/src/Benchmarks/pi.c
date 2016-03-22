@@ -8,15 +8,16 @@
 float pi_digits(int digits) {
    int carry = 0;
    int arr[digits + 1];
+   int i, j;
 
    clock_t t1, t2;
    t1 = clock();
 
-   for (int i = 0; i <= digits; ++i)
+   for (i = 0; i <= digits; ++i)
       arr[i] = ARRINIT;
-      for (int i = digits; i > 0; i-= 14) {
+      for (i = digits; i > 0; i-= 14) {
          int sum = 0;
-         for (int j = i; j > 0; --j) {
+         for (j = i; j > 0; --j) {
             sum = sum * j + SCALE * arr[j];
             arr[j] = sum % (j * 2 - 1);
             sum /= j * 2 - 1;
@@ -36,7 +37,7 @@ int main() {
    long i;
 
    for(i=0; i<5; i++){
-      it = pi_digits(80000);
+      it = pi_digits(100000);
       result = it + result;
    }
 
