@@ -1,4 +1,5 @@
 package Interface;
+
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
@@ -49,35 +50,11 @@ public class Compiler extends Thread {
 		    
     	}else{
     		
-    		try {
-    		
-    			Thread.sleep(300);
-				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload2.png")));
-				LoadWindow.Progress.setText("Compiling 1 / 5");
-				 
-				Thread.sleep(300);
-				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload3.png")));
-				LoadWindow.Progress.setText("Compiling 2 / 5");
-				
-				Thread.sleep(300);
-				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload4.png")));
-				LoadWindow.Progress.setText("Compiling 3 / 5");
-				 
-				Thread.sleep(300);
-				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload5.png")));
-				LoadWindow.Progress.setText("Compiling 4 / 5");
-				 
-				Thread.sleep(300);
-				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload6.png")));
-				LoadWindow.Progress.setText("Compiling 5 / 5");
-				
-				Thread.sleep(300); 
+    		try { Thread.sleep(1000); } catch (InterruptedException e) { }    		
 	    	
-	    		LoadWindow.wind.setVisible(false);
-				JFrame frame = new MainWindow();
-				frame.setVisible(true); 
-				
-    		} catch (InterruptedException e) { e.printStackTrace(); }
+    		LoadWindow.wind.setVisible(false);
+			JFrame frame = new MainWindow();
+			frame.setVisible(true); 
     		
     	}
     	
