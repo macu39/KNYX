@@ -32,7 +32,7 @@ public class TestWindow extends JFrame{
 		setUndecorated(true);
 
 		JLabel Logo = new JLabel("");
-		Logo.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/knyx-logo-big.png")));
+		Logo.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/knyx-logo-big.png")));
 		Logo.setBounds(0, 35, 350, 128);
 		getContentPane().add(Logo);
 		
@@ -65,12 +65,12 @@ public class TestWindow extends JFrame{
 		getContentPane().add(Progress);
 		
 		LoadingBar = new JLabel("");
-		LoadingBar.setIcon(new ImageIcon(TestWindow.class.getResource("/img/cload1.png")));
+		LoadingBar.setIcon(new ImageIcon(TestWindow.class.getResource("/Img/cload1.png")));
 		LoadingBar.setBounds(0, 484, 350, 66);
 		getContentPane().add(LoadingBar);
 		
 		JLabel Loader = new JLabel("");
-		Loader.setIcon(new ImageIcon(TestWindow.class.getResource("/img/loader.gif")));
+		Loader.setIcon(new ImageIcon(TestWindow.class.getResource("/Img/loader.gif")));
 		Loader.setBounds(107, 239, 128, 128);
 		getContentPane().add(Loader);
 		

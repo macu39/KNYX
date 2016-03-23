@@ -54,7 +54,7 @@ public class LoadWindow extends JFrame{
 		setUndecorated(true);
 
 		JLabel Logo = new JLabel("");
-		Logo.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/knyx-logo-big.png")));
+		Logo.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/knyx-logo-big.png")));
 		Logo.setBounds(0, 75, 350, 128);
 		getContentPane().add(Logo);
 		
@@ -85,7 +85,7 @@ public class LoadWindow extends JFrame{
 		Progress.setBounds(0, 495, 324, 45);
 		getContentPane().add(Progress);
 		
-		LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload1.png")));
+		LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload1.png")));
 		LoadingBar.setBounds(0, 484, 350, 66);
 		getContentPane().add(LoadingBar);
 		

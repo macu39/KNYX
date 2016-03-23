@@ -23,7 +23,7 @@ public class Benchmarks extends Thread {
 				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
 			    System.out.println("CPU test (primes): "+inStream.readLine());
 			    TestWindow.Progress.setText("1 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload2.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload2.png")));
 	
 				theProcess = null;
 			    inStream = null;
@@ -31,19 +31,19 @@ public class Benchmarks extends Thread {
 			    inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
 			    System.out.println("CPU test (pi): "+inStream.readLine());
 			    TestWindow.Progress.setText("2 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload3.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload3.png")));
 			    
 			    Thread.sleep(1000);
 			    TestWindow.Progress.setText("3 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload4.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload4.png")));
 			    
 			    Thread.sleep(1000);
 			    TestWindow.Progress.setText("4 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload5.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload5.png")));
 			    
 			    Thread.sleep(1000);
 			    TestWindow.Progress.setText("5 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload6.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload6.png")));
 			    
 			    Thread.sleep(1000);
 			    
@@ -60,31 +60,31 @@ public class Benchmarks extends Thread {
 	    	
 	    	try {	
 	    	
-				theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\Benchmarks\\primes.exe");
+				theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\Benchmarks\\primes.exe");
 				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
 			    System.out.println("CPU test (primes): "+inStream.readLine());
 			    TestWindow.Progress.setText("1 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload2.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload2.png")));
 	
 				theProcess = null;
 			    inStream = null;
-			    theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\Benchmarks\\pi.exe");
+			    theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\Benchmarks\\pi.exe");
 			   	inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
 			  	System.out.println("CPU test (pi): "+inStream.readLine());
 			    TestWindow.Progress.setText("2 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload3.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload3.png")));
 			    
 			    Thread.sleep(1000);
 			    TestWindow.Progress.setText("3 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload4.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload4.png")));
 			    
 			    Thread.sleep(1000);
 			    TestWindow.Progress.setText("4 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload5.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload5.png")));
 			    
 			    Thread.sleep(1000);
 			    TestWindow.Progress.setText("5 / 5");
-			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/img/cload6.png")));
+			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload6.png")));
 			    
 			    Thread.sleep(1000);
 			    

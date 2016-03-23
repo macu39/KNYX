@@ -55,7 +55,7 @@ public class MainWindow extends JFrame{
         addMouseMotionListener(mia);        
 		
 		JLabel Logo = new JLabel("");
-		Logo.setIcon(new ImageIcon(MainWindow.class.getResource("/img/knix-logo-small.png")));
+		Logo.setIcon(new ImageIcon(MainWindow.class.getResource("/Img/knix-logo-small.png")));
 		Logo.setBounds(0, 0, 139, 66);
 		getContentPane().add(Logo);
 		
@@ -150,9 +150,9 @@ public class MainWindow extends JFrame{
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		if(info.getVendor().equals("Intel")){
-			label_1.setIcon(new ImageIcon(MainWindow.class.getResource("/img/intel.png")));
+			label_1.setIcon(new ImageIcon(MainWindow.class.getResource("/Img/intel.png")));
 		}else{
-			label_1.setIcon(new ImageIcon(MainWindow.class.getResource("/img/amd.png")));
+			label_1.setIcon(new ImageIcon(MainWindow.class.getResource("/Img/amd.png")));
 		}
 		label_1.setBounds(34, 62, 279, 193);
 		getContentPane().add(label_1);

@@ -48,7 +48,7 @@ public class ResultsWindow extends JFrame{
         addMouseMotionListener(mia);        
 		
 		JLabel Logo = new JLabel("");
-		Logo.setIcon(new ImageIcon(ResultsWindow.class.getResource("/img/knix-logo-small.png")));
+		Logo.setIcon(new ImageIcon(ResultsWindow.class.getResource("/Img/knix-logo-small.png")));
 		Logo.setBounds(0, 0, 139, 66);
 		getContentPane().add(Logo);
 		
