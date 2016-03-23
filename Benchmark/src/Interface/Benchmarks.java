@@ -18,18 +18,24 @@ public class Benchmarks extends Thread {
         	BufferedReader inStream = null;
     	
 		    try {		    	
+
+				JFrame frame = new ResultsWindow();
 		    	
-				theProcess = Runtime.getRuntime().exec("primes");
+				theProcess = Runtime.getRuntime().exec("./Benchmarks/primes");
 				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
-			    System.out.println("CPU test (primes): "+inStream.readLine());
+				float result1= Float.valueOf(inStream.readLine())/1000;
+			    System.out.println("CPU test (primes): "+result1);
+			    ResultsWindow.Primes.setText("CPU test (primes): "+result1);
 			    TestWindow.Progress.setText("1 / 5");
 			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload2.png")));
 	
 				theProcess = null;
 			    inStream = null;
-			    theProcess = Runtime.getRuntime().exec("./pi");
+			    theProcess = Runtime.getRuntime().exec("./Benchmarks/pi");
 			    inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
-			    System.out.println("CPU test (pi): "+inStream.readLine());
+			    result1= Float.valueOf(inStream.readLine())/1000;
+			    System.out.println("CPU test (pi): "+result1);
+			    ResultsWindow.Pi.setText("CPU test (pi): "+result1);
 			    TestWindow.Progress.setText("2 / 5");
 			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload3.png")));
 			    
@@ -48,7 +54,6 @@ public class Benchmarks extends Thread {
 			    Thread.sleep(1000);
 			    
 			    MainWindow.wind.setVisible(false);
-				JFrame frame = new ResultsWindow();
 				frame.setVisible(true);
 			    
 			} catch (IOException | InterruptedException e) { e.printStackTrace(); }
@@ -62,7 +67,9 @@ public class Benchmarks extends Thread {
 	    	
 				theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\Benchmarks\\primes.exe");
 				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
-			    System.out.println("CPU test (primes): "+inStream.readLine());
+				float result1= Float.valueOf(inStream.readLine());
+			    System.out.println("CPU test (primes): "+result1);
+			    ResultsWindow.Primes.setText("CPU test (primes): "+result1);
 			    TestWindow.Progress.setText("1 / 5");
 			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload2.png")));
 	
@@ -70,7 +77,9 @@ public class Benchmarks extends Thread {
 			    inStream = null;
 			    theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\Benchmarks\\pi.exe");
 			   	inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
-			  	System.out.println("CPU test (pi): "+inStream.readLine());
+				result1= Float.valueOf(inStream.readLine());
+			    System.out.println("CPU test (pi): "+result1);
+			    ResultsWindow.Primes.setText("CPU test (pi): "+result1);
 			    TestWindow.Progress.setText("2 / 5");
 			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload3.png")));
 			    

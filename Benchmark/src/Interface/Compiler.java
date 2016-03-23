@@ -14,27 +14,24 @@ public class Compiler extends Thread {
     	
 		    try {
 		    	
-		    	Runtime.getRuntime().exec("cc "+System.getProperty("user.dir")+"/Benchmark/primes.c -o primes");
+		    	Runtime.getRuntime().exec("cc "+System.getProperty("user.dir")+"/Benchmarks/primes.c -o "+System.getProperty("user.dir")+"/Benchmarks/primes");
 				Thread.sleep(300);
 				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload2.png")));
 				LoadWindow.Progress.setText("Compiling 1 / 5");
 				 
-				Runtime.getRuntime().exec("cc "+System.getProperty("user.dir")+"/Benchmark/pi.c -o pi");
+				Runtime.getRuntime().exec("cc "+System.getProperty("user.dir")+"/Benchmarks/pi.c -o "+System.getProperty("user.dir")+"/Benchmarks/pi");
 				Thread.sleep(300);
 				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload3.png")));
 				LoadWindow.Progress.setText("Compiling 2 / 5");
 				
-				Runtime.getRuntime().exec("cc "+System.getProperty("user.dir")+"/Benchmark/primes.c -o primes");
 				Thread.sleep(300);
 				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload4.png")));
 				LoadWindow.Progress.setText("Compiling 3 / 5");
 				 
-				Runtime.getRuntime().exec("cc "+System.getProperty("user.dir")+"/Benchmark/primes.c -o primes");
 				Thread.sleep(300);
 				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload5.png")));
 				LoadWindow.Progress.setText("Compiling 4 / 5");
-				 
-				Runtime.getRuntime().exec("cc "+System.getProperty("user.dir")+"/Benchmark/primes.c -o primes");
+				
 				Thread.sleep(300);
 				LoadWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload6.png")));
 				LoadWindow.Progress.setText("Compiling 5 / 5");

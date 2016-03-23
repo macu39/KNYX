@@ -18,6 +18,7 @@ import java.awt.event.MouseAdapter;
 public class ResultsWindow extends JFrame{
 
 	private static int x, y;
+	public static JLabel Primes, Pi;
 	
 	public ResultsWindow(){
 		
@@ -88,6 +89,16 @@ public class ResultsWindow extends JFrame{
 		});
 		Home.setBounds(21, 475, 92, 51);
 		getContentPane().add(Home);
+		
+		Primes = new JLabel("");
+		Primes.setForeground(Color.WHITE);
+		Primes.setBounds(21, 78, 306, 30);
+		getContentPane().add(Primes);
+		
+		Pi = new JLabel("");
+		Pi.setForeground(Color.WHITE);
+		Pi.setBounds(21, 120, 306, 30);
+		getContentPane().add(Pi);
 		
 	}
 }
