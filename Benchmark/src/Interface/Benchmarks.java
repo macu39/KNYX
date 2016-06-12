@@ -65,6 +65,8 @@ public class Benchmarks extends Thread {
         	BufferedReader inStream = null;
 	    	
 	    	try {	
+	    		
+	    		JFrame frame = new ResultsWindow();
 	    	
 				theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\Benchmarks\\primes.exe");
 				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
@@ -100,7 +102,6 @@ public class Benchmarks extends Thread {
 			    Thread.sleep(1000);
 			    
 			    MainWindow.wind.setVisible(false);
-				JFrame frame = new ResultsWindow();
 				frame.setVisible(true);
 			
 	    	} catch (InterruptedException | IOException e) { e.printStackTrace(); }
