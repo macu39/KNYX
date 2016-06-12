@@ -1,0 +1,222 @@
+html, body{
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	font-family: 'Open Sans', sans-serif;
+	background: url(../img/bg.jpg) no-repeat center center fixed;
+	-ms-overflow-style: none;
+	overflow: -moz-scrollbars-none;
+}
+
+html::-webkit-scrollbar { width: 0 !important }
+h1{
+	margin:0px;
+	text-align:center;
+	color:#fff;
+	font-weight:100;
+	font-size:49px;
+	text-shadow: 1px 1px #000;
+}
+iframe{
+	position:absolute;
+	width:100%;
+	height:100vh;
+	top:0px;
+	border:0px;
+	z-index:1;
+}
+
+#home-background{
+	width:100%;
+	left:0;
+	top:0;
+	height:100vh;
+	position:absolute;
+	z-index:2;
+}
+
+#header-container{
+	position:absolute;
+	top:0px;
+	width:100%;
+	z-index:2;
+	text-align:center;
+	padding-top:25vh;
+}
+
+#header-container h1{
+	color:#000;
+	font-size:45px;
+	opacity:0.8;
+	background:#96110d;
+	padding:10px;
+	display:inline-flex;
+	margin:0px;
+	text-shadow:none;
+}
+
+#header-container h2{
+	color:#fff;
+	font-size:30px;
+	opacity:0.7;
+	padding:10px;
+	display:inline-flex;
+	margin:0px;
+}
+
+#header-container img{
+	opacity:0.85;
+}
+
+#menu-container{
+	background:#000;
+	opacity:0.7;
+	width:100%;
+	height:80px;
+	position: fixed;
+	top:0px;
+	z-index:3;
+}
+
+#menu{
+	width:75%;
+	margin:0 auto;
+}
+
+#menu img{
+	opacity:0.7;
+	float:left;
+}
+
+#menu a{
+	opacity:0.7;
+	font-size:17px;
+	color:#fff;
+	text-decoration:none;
+	margin: 26 10;
+	float:right;
+	font-weight:100;
+}
+
+#menu a:hover{
+	opacity:1;
+	color:#fff;
+}
+
+#faq{
+	height:calc(100vh - 120px);
+	padding: 100 20 20 20;
+	margin-top:100vh;
+	background:#282828;
+	overflow: hidden;
+}
+
+#statistics{
+	min-height:calc(100vh - 120px);
+	padding: 100 20 20 20;
+	overflow: hidden;
+}
+
+#download{
+	height:calc(100vh - 120px);
+	padding: 100 20 20 20;
+	background:#96110d;
+	overflow: hidden;
+	text-align:center;
+}
+
+#down{
+	position:absolute;
+	width:100%;
+	text-align:center;
+	bottom:10px;
+	z-index:2;
+}
+
+#stat-box{
+	display: inline-flex;
+	overflow: hidden;
+}
+
+#stat{
+	width:300px;
+	height:230px;
+	display: inline;
+	border-radius:5px;
+	margin:10px;
+	background:#96110d;
+	text-align:center;
+	color:#282828;
+}
+
+#stat h3{
+	padding:5px;
+	margin:0px;
+}
+
+#stat-text{
+	color:#fff;
+	font-size:87px;
+	font-weight:400;
+}
+
+#stat-legend{
+	color:#fff;
+	font-size:47px;
+	font-weight:100;
+}
+
+#stat-legend1{
+	color:#fff;
+	font-size:27px;
+	font-weight:100;
+}
+
+#stat-container{
+	width:75%;
+	margin:0 auto;
+	text-align:center;
+}
+
+#name{	height:180px;}
+#os{	height:180px;}
+#osv{	height:180px;}
+#cores{	height:180px;}
+#vendor{	height:180px;}
+
+#download-btn {
+	width:300px;
+	padding:25px 0px;
+	background:#282828;
+	color:#fff;
+	font-weight:100;
+	text-align:center;
+	margin:0 auto;
+	text-decoration:none;
+	margin-bottom:10px;
+}
+#download-img {
+	max-width:50%;
+	margin:100px auto 130px auto;
+}
+
+#download-btn:hover {
+	background:#000;
+}
+
+#download-btn h3{
+	padding:0px;
+	margin:0px;
+	font-weight:100;
+}
+
+#download a{
+	color:#000;
+	text-decoration:none;
+}
+
+#download a:hover{
+	color:#fff;
+	text-decoration:none;
+}
