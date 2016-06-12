@@ -1,4 +1,4 @@
-<?php include("functions.php"); session_name("HOB"); session_start();?>
+<?php include("functions.php"); ?>
 
 <html>
 	<head>
@@ -17,27 +17,18 @@
 			<h1>EXPECT THE UNEXPECTED</h1><br>
 			<h2>BENCHMARK YOUR COMPUTER</h2>
 		</div>
-		<div id="down"><a href="#statistics"><img src="img/down.png"></a></div>
+		<div id="down"><a href="#faq"><img src="img/down.png"></a></div>
 		<div id="menu-container">
 			<div id="menu">
-				<img src="img/logo.png">	
-				<?php 
-					if(!isset($_SESSION["user"])){
-						echo'<a href="login.php">Log in</a>';
-					}else{
-						echo'<a href="login.php?a=logout">Log out</a>';
-						if($_SESSION["rights"]==10){
-							echo'<a href="admin.php">Admin</a>';
-						}else{
-							echo'<a href="profile.php">Profile</a>';
-						}
-					}	
-				?>
-				<a href="rank.php">Ranking</a>	
+				<img src="img/logo.png">			
 				<a href="#download">Download</a>
-				<a href="#statistics">View Statistics</a>	
+				<a href="#statistics">View Statistics</a>
+				<a href="#faq">How it works?</a>	
 				<a href="#">Home</a>				
 			</div>	
+		</div>
+		<div id="faq">
+			<h1>How it works?</h1>			
 		</div>
 		<div id="statistics">
 			<h1>View Statistics</h1>
@@ -105,7 +96,7 @@
 		<div id="download">
 			<h1>Download</h1>
 			<div id="download-img"><img src="img/download.png" width="100%"></div>
-			<a href="downloads/knyx.zip">
+			<a href="">
 				<div id="download-btn">
 					<h3>Download</h3>
 				</div>

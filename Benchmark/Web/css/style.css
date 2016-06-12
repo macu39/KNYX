@@ -104,9 +104,16 @@ iframe{
 	color:#fff;
 }
 
-#statistics{
+#faq{
 	height:calc(100vh - 120px);
+	padding: 100 20 20 20;
 	margin-top:100vh;
+	background:#282828;
+	overflow: hidden;
+}
+
+#statistics{
+	min-height:calc(100vh - 120px);
 	padding: 100 20 20 20;
 	overflow: hidden;
 }
@@ -212,54 +219,4 @@ iframe{
 #download a:hover{
 	color:#fff;
 	text-decoration:none;
-}
-
-#result-container{
-	width:100%;
-	padding-top:80px;
-}
-
-#result{
-	margin:0 auto 10 auto;
-	padding:20px;
-	overflow:hidden;
-	width:75%;
-	background:#fff;
-	font-size:15;
-	opacity:0.9;
-}
-
-#result img{
-	float:left;
-	margin-right:20px;
-}
-
-#result h1{
-	color:#000;
-}
-
-#score-item{
-	margin:10 auto;
-	padding:20px;
-	overflow:hidden;
-	width:75%;
-	background:#fff;
-	font-size:21;
-	opacity:0.9;
-}
-
-.right{
-	float:right;
-}
-	
-.error{
-	color:#ff0000; 
-	background:#222;
-	padding:5px;
-}
-
-.green{
-	color:#70a83b; 
-	background:#222;
-	padding:5px;
 }
