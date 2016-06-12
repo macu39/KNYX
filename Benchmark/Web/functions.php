@@ -5,7 +5,7 @@
 	function getCoresAVG(){
 		
 		global $db;
-		$result = $db->query("SELECT AVG(cpu_cores) as cpu_cores FROM Computers");
+		$result = $db->query("SELECT AVG(cpu_cores) as cpu_cores FROM Computers");		
 		$result = $result->fetch_assoc();
 		$cores = round($result['cpu_cores']);
 		return $cores;
