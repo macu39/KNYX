@@ -19,14 +19,12 @@ public class Benchmarks extends Thread {
         	BufferedReader inStream = null;
     	
 		    try {		    	
-
-				JFrame frame = new ResultsWindow();
 		    	
 				theProcess = Runtime.getRuntime().exec("./Benchmarks/primes");
 				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
 				float result1= Float.valueOf(inStream.readLine())/1000;
 			    System.out.println("CPU test (primes): "+result1);
-			    result1= Float.valueOf(inStream.readLine());
+			    ResultsWindow.res1=result1;
 			    TestWindow.Progress.setText("1 / 5");
 			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload2.png")));
 	
@@ -36,7 +34,7 @@ public class Benchmarks extends Thread {
 			    inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
 			    result1= Float.valueOf(inStream.readLine())/1000;
 			    System.out.println("CPU test (pi): "+result1);
-			    result1= Float.valueOf(inStream.readLine());
+			    ResultsWindow.res2=result1;
 			    TestWindow.Progress.setText("2 / 5");
 			    TestWindow.LoadingBar.setIcon(new ImageIcon(LoadWindow.class.getResource("/Img/cload3.png")));
 			    
@@ -55,6 +53,7 @@ public class Benchmarks extends Thread {
 			    Thread.sleep(1000);
 			    
 			    MainWindow.wind.setVisible(false);
+			    JFrame frame = new ResultsWindow();
 				frame.setVisible(true);
 			    
 			} catch (IOException | InterruptedException e) { e.printStackTrace(); }
@@ -65,8 +64,6 @@ public class Benchmarks extends Thread {
         	BufferedReader inStream = null;
 	    	
 	    	try {	
-	    		
-	    		JFrame frame = new ResultsWindow();
 	    	
 				theProcess = Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\Benchmarks\\primes.exe");
 				inStream = new BufferedReader(new InputStreamReader( theProcess.getInputStream() ));
@@ -102,6 +99,7 @@ public class Benchmarks extends Thread {
 			    Thread.sleep(1000);
 			    
 			    MainWindow.wind.setVisible(false);
+			    JFrame frame = new ResultsWindow();
 				frame.setVisible(true);
 			
 	    	} catch (InterruptedException | IOException e) { e.printStackTrace(); }
