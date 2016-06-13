@@ -38,12 +38,14 @@
 				<div id="result-container">	
 					<div id="result">	
 						<h1>Log in</h1>
-						<form action="?a=login" method="post">
-							<input type="text" name="user" placeholder="User" required><br>
-							<input type="password" name="password" placeholder="Password" required><br>
-							<input type="submit" value="Log In">
-							<a href="login.php?a=register">Create an account</a>
-						</form>		
+						<div id="form">	
+							<form action="?a=login" method="post">
+								<input type="text" name="user" placeholder="User" required><br>
+								<input type="password" name="password" placeholder="Password" required><br>
+								<input type="submit" value="Log In"><br>
+								<a href="login.php?a=register">Create an account</a>
+							</form>		
+						</div>
 					</div>
 			<?php
 			
@@ -68,7 +70,7 @@
 			$_SESSION["rights"]=$row['rights'];
 			header('Location: profile.php');			
 		}else{
-			$_SESSION["error"]="<span class='error'>Incorrect username or password.</span>";
+			$_SESSION["error"]="<div id='err'><span class='error'>Incorrect username or password.</span></div>";
 			header('Location: login.php');
 		}	
 
@@ -112,11 +114,13 @@
 			<div id="result-container">	
 				<div id="result">	
 					<h1>Create Account</h1>
-					<form action="?a=up" method="post">
-						<input type="text" name="user" placeholder="User" required><br>
-						<input type="password" name="password" placeholder="Password" required><br>
-						<input type="submit" value="Create Account">
-					</form>		
+					<div id="form">	
+						<form action="?a=up" method="post">
+							<input type="text" name="user" placeholder="User" required><br>
+							<input type="password" name="password" placeholder="Password" required><br>
+							<input type="submit" value="Create Account">
+						</form>		
+					</div>
 				</div>
 		<?php
 		
@@ -133,15 +137,15 @@
 			$result = $db->query("INSERT INTO Users (name, password) VALUES ('$user', '$password')");
 							
 			if($result){			
-				$_SESSION["error"]="<span class='green'>Account created.</span>";
+				$_SESSION["error"]="<div id='err'><span class='green'>Account created.</span></div>";
 				header('Location: login.php');			
 			}else{
-				$_SESSION["error"]="<span class='error'>Unexpected error.</span>";
+				$_SESSION["error"]="<div id='err'><span class='error'>Unexpected error.</span></div>";
 				header('Location: login.php?a=register');
 			}	
 			
 		}else{
-			$_SESSION["error"]="<span class='error'>Username or password empty.</span>";
+			$_SESSION["error"]="<div id='err'><span class='error'>Username or password empty.</span></div>";
 			header('Location: login.php?a=register');
 		}
 

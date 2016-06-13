@@ -13,8 +13,8 @@
 			$result = $db->query("INSERT INTO Computers (cpu_vendor, cpu_model, cpu_frequency, cpu_cores, ram, hdd, os_name, os_version, mac, owner) VALUES ('$cpu_vendor', '$cpu_model', '$cpu_freq', '$cpu_cores', '$ram', '$hdd', '$os', '$os_version', '$mac', '')");
 			
 			if(!$result){ echo "Computer exists. "; }
-			
-			$result = $db->query("INSERT INTO Scores (mac, score) VALUES ('$mac', '$score')");
+			$date = date('Y-m-d');
+			$result = $db->query("INSERT INTO Scores (mac, score, date) VALUES ('$mac', '$score', '$date')");
 			
 			if($result){
 				echo "All done.";

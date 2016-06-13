@@ -32,8 +32,9 @@
 						<a href="index.php#statistics">View Statistics</a>
 						<a href="index.php#">Home</a>				
 					</div>	
-				</div>
+				</div>				
 				<div id="result-container">	
+					<h1>Less is better</h1>
 		<?php
 		
 		$result = $db->query("SELECT min(score) as score, mac, date FROM Scores GROUP BY mac ORDER BY score ASC");	

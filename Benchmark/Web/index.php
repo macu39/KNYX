@@ -35,7 +35,8 @@
 				?>
 				<a href="rank.php">Ranking</a>	
 				<a href="#download">Download</a>
-				<a href="#statistics">View Statistics</a>	
+				<a href="#statistics">View Statistics</a>
+				<a href="http://demo.ckan.org/dataset/knyx">Open Data</a>		
 				<a href="#">Home</a>				
 			</div>	
 		</div>

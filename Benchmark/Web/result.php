@@ -40,7 +40,13 @@
 					</div>
 					<div id="result-container">
 						<div id="result">					
-							<img src="img/intel.png"><br>
+							<?php
+								if($row["cpu_vendor"]=="Intel"){
+									echo'<img src="img/intel.png"><br>';
+								}else{
+									echo'<img src="img/amd.png"><br>';
+								}							
+							?>
 							<b>CPU Model: </b><?=$row["cpu_model"];?><br><br>
 							<b>CPU Frequency: </b><?=$row["cpu_frequency"];?> Mhz<br><br>
 							<b>CPU Cores: </b><?=$row["cpu_cores"];?> cores<br><br>
