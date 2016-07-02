@@ -1,2 +1,2 @@
 # KNYX
-Benchmark Suite programed in C and Java
+Open source computer benchmark made in c, java and html5.
